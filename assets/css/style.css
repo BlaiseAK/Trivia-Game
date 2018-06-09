@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+
+.container {
+    background: black
+}
+
+#header {
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+#subHeader {
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.question {
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
