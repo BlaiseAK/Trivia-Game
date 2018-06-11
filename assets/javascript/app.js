@@ -39,3 +39,24 @@ function start() {
         time--;
     }
 }
+
+
+// function questionCount () {
+// if question 1 is selected unanswered - 1
+
+// if question 1 input value = correct then correct + 1
+
+if ($("input[name='question1']:checked").val()==="correct") {
+    correct++;
+    unanswered--;
+} else if ($("input[name='question1']:checked").val()==="incorrect") {
+    incorrect++;
+    unanswered--;
+}
+
+// else is question 1 input value = incorrect + 1
+
+
+
+
+// }
