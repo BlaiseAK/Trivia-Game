@@ -1,10 +1,11 @@
 *{
     box-sizing: border-box;
+    color: white;
 }
 
 body {
     background: url(../images/HyperSpace.jpg);
-    color: white;
+    /* color: yellow; */
     position: relative;
 }
 
