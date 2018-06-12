@@ -1,7 +1,8 @@
-var time = 3;
+var time = 30;
+var numberOfCheckedRadio = $(":radio[name='question1']:checked, :radio[name='question2']:checked, :radio[name='question3']:checked, :radio[name='question4']:checked, :radio[name='question5']:checked, :radio[name='question6']:checked, :radio[name='question7']:checked, :radio[name='question8']:checked").length;
 var correct = 0;
 var incorrect = 0;
-var unanswered = 8;
+var unanswered = 8-numberOfCheckedRadio;
 
 
 $("#start").on("click", function() {
@@ -9,13 +10,7 @@ $("#start").on("click", function() {
     $("#game").show();
     // start timer function here
     start();
-    startGame();
-    
 })
-
-function startGame() {
-    $("#timer").html("<h4>You have " + time + " seconds left</h4>");
-}
 
 // counting right and wrong answers here
 
@@ -28,31 +23,37 @@ function results () {
     
 }
 
+// set interval that everysecond run the time
+function intervalCountDown() {
+    $("#timer").html("<h4>You have " + time + " seconds left</h4>");
+    time--;
+}
 // setTimeout(results, 90*1000);
 function start() {
-    intervalId = setTimeout(results, time*1000)
+    intervalId = setTimeout (results, time*1000)
     if (time === 0) {
         clearInterval(intervalId);
         clearTimeout(intervalId);
         results();
     } else {
-        time--;
+        setInterval(intervalCountDown, 1000);
     }
 }
 
-
+var answer1 = $("input[name='question1']:checked").val();
+console.log(answer1)
 // function questionCount () {
 // if question 1 is selected unanswered - 1
 
 // if question 1 input value = correct then correct + 1
 
-if ($("input[name='question1']:checked").val()==="correct") {
-    correct++;
-    unanswered--;
-} else if ($("input[name='question1']:checked").val()==="incorrect") {
-    incorrect++;
-    unanswered--;
-}
+// if ($("input[name='question1']:checked").val()="correct") {
+//     correct++;
+//     unanswered--;
+// } else if ($("input[name='question1']:checked").val()="incorrect") {
+//     incorrect++;
+//     unanswered--;
+// }
 
 // else is question 1 input value = incorrect + 1
 
