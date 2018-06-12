@@ -1,4 +1,4 @@
-var time = 90;
+var time = 45;
 var correct = 0;
 var incorrect = 0;
 var unanswered = 8;
